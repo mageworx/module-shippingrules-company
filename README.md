@@ -82,8 +82,8 @@ php bin/magento setup:static-content:deploy
 
 Here's how the new attributes look like in the condition section of the shipping rules:
 
-![Preview in conditions 1](./images/example_1.png)
+![Preview in conditions 1](https://github.com/mageworx/module-shippingrules-company/raw/update_readme/images/example_1.png)
 
-![Preview in conditions 2](./images/example_2.png)
+![Preview in conditions 2](https://github.com/mageworx/module-shippingrules-company/raw/update_readme/images/example_2.png)
 
 > Important note: This feature is available only if you have Magento B2B modules installed on your system.
