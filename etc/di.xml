@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © MageWorx. All rights reserved.
+    See LICENSE.txt for license details.
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MageWorx\ShippingRulesCompany\Api\CompanyAttributesStackInterface"
+                type="MageWorx\ShippingRulesCompany\Model\CompanyAttributesStack"/>
+    <preference for="MageWorx\ShippingRulesCompany\Api\CompanyAttributesDataTransformInterface"
+                type="MageWorx\ShippingRulesCompany\Model\CompanyAttributesDataTransform"/>
+    <type name="MageWorx\ShippingRulesCompany\Api\CompanyAttributesStackInterface">
+        <arguments>
+            <argument name="attributes" xsi:type="array">
+                <item name="company_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\CompanyId</item>
+                <item name="customer_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\CustomerId</item>
+                <item name="job_title" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\JobTitle</item>
+                <item name="status" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Status</item>
+                <item name="telephone" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Telephone</item>
+                <item name="company_name" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\CompanyName</item>
+                <item name="legal_name" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\LegalName</item>
+                <item name="company_email" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\CompanyEmail</item>
+                <item name="vat_tax_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\VatTaxId</item>
+                <item name="reseller_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\ResellerId</item>
+                <item name="comment" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Comment</item>
+                <item name="street" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Street</item>
+                <item name="city" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\City</item>
+                <item name="country_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\CountryId</item>
+                <item name="region_id" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\RegionId</item>
+                <item name="region" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Region</item>
+                <item name="postcode" xsi:type="object">MageWorx\ShippingRulesCompany\Model\Attribute\Postcode</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Virtual attributes -->
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\CompanyId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">company_id</item>
+                <item name="label" xsi:type="string">Company ID</item>
+                <item name="input_type" xsi:type="string">numeric</item>
+                <item name="value_type" xsi:type="string">text</item>
+                <item name="source_model" xsi:type="null" />
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\CustomerId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">customer_id</item>
+                <item name="label" xsi:type="string">Customer ID</item>
+                <item name="input_type" xsi:type="string">numeric</item>
+                <item name="value_type" xsi:type="string">text</item>
+                <item name="source_model" xsi:type="null" />
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\JobTitle" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">job_title</item>
+                <item name="label" xsi:type="string">Job Title</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Status" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">status</item>
+                <item name="label" xsi:type="string">Current Company Status</item>
+                <item name="input_type" xsi:type="string">select</item>
+                <item name="value_type" xsi:type="string">select</item>
+                <item name="source_model" xsi:type="object">Magento\Company\Model\Company\Source\Status</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Telephone" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">telephone</item>
+                <item name="label" xsi:type="string">Telephone</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\CompanyName" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">company_name</item>
+                <item name="label" xsi:type="string">Company Name</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\LegalName" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">legal_name</item>
+                <item name="label" xsi:type="string">Legal Name</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\CompanyEmail" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">company_email</item>
+                <item name="label" xsi:type="string">Company email</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\VatTaxId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">vat_tax_id</item>
+                <item name="label" xsi:type="string">VAT Tax ID</item>
+                <item name="input_type" xsi:type="string">numeric</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\ResellerId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">reseller_id</item>
+                <item name="label" xsi:type="string">Reseller ID</item>
+                <item name="input_type" xsi:type="string">numeric</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Comment" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">comment</item>
+                <item name="label" xsi:type="string">Comment</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Street" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">street</item>
+                <item name="label" xsi:type="string">Street</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\City" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">city</item>
+                <item name="label" xsi:type="string">City</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\CountryId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">country_id</item>
+                <item name="label" xsi:type="string">Country Id</item>
+                <item name="input_type" xsi:type="string">select</item>
+                <item name="value_type" xsi:type="string">select</item>
+                <item name="source_model" xsi:type="null" />
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\RegionId" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">region_id</item>
+                <item name="label" xsi:type="string">Region Id</item>
+                <item name="input_type" xsi:type="string">select</item>
+                <item name="value_type" xsi:type="string">select</item>
+                <item name="source_model" xsi:type="null" />
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Region" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">region</item>
+                <item name="label" xsi:type="string">Region</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MageWorx\ShippingRulesCompany\Model\Attribute\Postcode" type="MageWorx\ShippingRules\Model\Attribute\RuleAttributeBlank">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="code" xsi:type="string">postcode</item>
+                <item name="label" xsi:type="string">Postcode</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="shipping_rule_condition_combine">
+        <observer
+            name="mageworx_shippingrules_add_company_conditions"
+            instance="MageWorx\ShippingRulesCompany\Observer\AddCompanyConditions"
+        />
+    </event>
+</config>
