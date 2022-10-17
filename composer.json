@@ -1,0 +1,22 @@
+{
+    "name": "mageworx/module-shippingrules-company",
+    "description": "Shipping Rules B2B compatibility module",
+    "require": {
+        "mageworx/module-shippingrules": "^2.12",
+        "magento/module-company": "^101.1"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageWorx\\ShippingRulesCompany\\": ""
+        }
+    }
+}
