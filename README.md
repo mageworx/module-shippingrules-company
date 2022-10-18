@@ -1,4 +1,4 @@
-# MageWorx Shipping Rules Company Conditions (B2B) Extension for Magento 2
+# Mageworx Shipping Rules Company Conditions (Adobe Commerce B2B) Extension for Magento 2
 
 Extension for [Mageworx Shipping Suite](https://www.mageworx.com/magento-2-shipping-suite.html) module.
 
